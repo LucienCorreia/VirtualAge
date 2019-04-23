@@ -1,0 +1,16 @@
+{
+    "name": "lucien/virtual-age",
+    "description": "Lib VirtualAge",
+    "authors": [
+        {
+            "name": "Lucien Correia",
+            "email": "lucien@wadvice.com.br"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "VirtualAge\\": "src/"
+        }
+    }
+}
