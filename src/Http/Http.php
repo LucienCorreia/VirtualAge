@@ -24,12 +24,12 @@ class Http {
         return $this;
     }
 
-    public function getResponse() {
+    public function getResponse(callable $callable) {
 
         $response = $this->soap->__soapCall('requisicao', [
             'XML' => $this->xml
         ]);
 
-        return $response;
+        return $callable($response);
     } 
 }
