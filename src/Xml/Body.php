@@ -16,6 +16,6 @@ class Body {
     }
 
     public function getAll() : array {
-        return $this->lesi;
+        return $this->list;
     }
 }

@@ -33,7 +33,6 @@ class Xml {
     
             $this->root->appendChild($elementBody);
         } 
-
     }
 
     public function getXML() {
