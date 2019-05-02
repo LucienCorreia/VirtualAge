@@ -24,13 +24,16 @@ class Xml {
 
         $this->root->appendChild($elementAuth);
 
-        $elementBody = $this->xml->createElement($body->getElement(), $body->getValue());
-        
-        foreach ($body->getAttributes() as $name => $value) {
-            $elementBody->setAttribute($name, $value);
-        }
+        foreach($body->getAll() as $b) {
+            $elementBody = $this->xml->createElement($b->getElement(), $b->getValue());
+            
+            foreach ($b->getAttributes() as $name => $value) {
+                $elementBody->setAttribute($name, $value);
+            }
+    
+            $this->root->appendChild($elementBody);
+        } 
 
-        $this->root->appendChild($elementBody);
     }
 
     public function getXML() {
