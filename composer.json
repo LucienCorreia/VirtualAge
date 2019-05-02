@@ -7,7 +7,11 @@
             "email": "lucien@wadvice.com.br"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=7.1",
+        "jms/serializer": "1.7.0",
+		"phpdocumentor/phpdocumentor": "^2.9"
+    },
     "autoload": {
         "psr-4": {
             "VirtualAge\\": "src/",

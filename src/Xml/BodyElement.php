@@ -10,7 +10,7 @@ class BodyElement {
     private $attributes = [];
 
     /**
-     * @var string NOme do elemento
+     * @var string Nome do elemento
      */
     private $element = '';
 

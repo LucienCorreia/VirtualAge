@@ -3,16 +3,23 @@
 namespace VirtualAge\Xml;
 
 use DOMDocument;
-use VirtualAge\Xml\{
-    Auth,
-    Body
-};
 
 class Xml {
 
+    /**
+     * @var DOMDocument
+     */
     private $xml;
+
+    /**
+     * @var DOMElemment
+     */
     private $root;
 
+    /**
+     * @param VirtualAge\Xml\Auth $auth
+     * @param VirtualAge\Xml\Body $body
+     */
     public function __construct(Auth $auth, Body $body) {
 
         $this->xml = new DOMDocument('1.0', 'UTF-8');
@@ -50,6 +57,9 @@ class Xml {
         } 
     }
 
+    /**
+     * @return string
+     */
     public function getXML() : string {
         return $this->xml->saveXML();
     }

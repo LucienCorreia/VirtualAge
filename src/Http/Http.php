@@ -6,15 +6,28 @@ use SoapClient;
 
 class Http {
 
+    /**
+     * @var SoapClient
+     */
     private $soap;
-    private $function;
+
+    /**
+     * @var string XML
+     */
     private $xml;
 
+    /**
+     * @param string $url
+     */
     public function __construct(string $url) {
 
         $this->soap = new SoapClient($url);
     }
 
+    /**
+     * @param string $xml
+     * @return object VirtualAge\Http\Http
+     */
     public function setXML(string $xml) : Http {
 
         $xml = str_replace('<?xml version="1.0" encoding="UTF-8"?>', '', $xml);
@@ -24,6 +37,10 @@ class Http {
         return $this;
     }
 
+    /**
+     * @param void $callable
+     * @return void
+     */
     public function getResponse(callable $callable) {
 
         $response = $this->soap->__soapCall('requisicao', [
