@@ -10,7 +10,8 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "VirtualAge\\": "src/"
+            "VirtualAge\\": "src/",
+            "Tests\\": "tests/"
         }
     },
     "require-dev": {
