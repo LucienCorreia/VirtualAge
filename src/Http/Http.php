@@ -43,10 +43,18 @@ class Http {
      */
     public function getResponse(callable $callable) {
 
-        $response = $this->soap->__soapCall('requisicao', [
-            'XML' => $this->xml
-        ]);
+        try {
+            $response = $this->soap->__soapCall('requisicao', [
+                'XML' => $this->xml
+            ]);
 
-        return $callable($response);
+            return $callable($response);
+        } catch(SoapFault $e) {
+            if($e->getCode() == 504) {
+                return $this->getResponse($callable);
+            }
+
+            throw $e;
+        }
     } 
 }
