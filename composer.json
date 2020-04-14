@@ -1,10 +1,10 @@
 {
-    "name": "wadvice/virtual-age",
+    "name": "multiplier/virtual-age",
     "description": "Lib VirtualAge",
     "authors": [
         {
             "name": "Lucien Correia",
-            "email": "lucien@wadvice.com.br"
+            "email": "lucien@multiplier.com.br"
         }
     ],
     "require": {
